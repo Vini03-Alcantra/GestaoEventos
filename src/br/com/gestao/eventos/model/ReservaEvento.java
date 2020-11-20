@@ -1,56 +1,56 @@
 package br.com.gestao.eventos.model;
 
 public class ReservaEvento {
-	private static int idReservaEvento;
-	private static String nomeEvento;
-	private static String horarioEvento;
-	private static String dataEvento;
-	private static String descricaoEvento;
-	private static int idEspaco;
-	private static int idProfessor;
+	private  int idthis;
+	private  String nomeEvento;
+	private  String horarioEvento;
+	private  String dataEvento;
+	private  String descricaoEvento;
+	private  int idEspaco;
+	private  int idProfessor;
 	
-	public static int getIdReservaEvento() {
-		return idReservaEvento;
+	public  int getIdthis() {
+		return idthis;
 	}
-	public static void setIdReservaEvento(int idReservaEvento) {
-		ReservaEvento.idReservaEvento = idReservaEvento;
+	public  void setIdthis(int idthis) {
+		this.idthis = idthis;
 	}
-	public static int getIdEspaco() {
+	public  int getIdEspaco() {
 		return idEspaco;
 	}
-	public static void setIdEspaco(int idEspaco) {
-		ReservaEvento.idEspaco = idEspaco;
+	public  void setIdEspaco(int idEspaco) {
+		this.idEspaco = idEspaco;
 	}
-	public static int getIdProfessor() {
+	public  int getIdProfessor() {
 		return idProfessor;
 	}
-	public static void setIdProfessor(int idProfessor) {
-		ReservaEvento.idProfessor = idProfessor;
+	public  void setIdProfessor(int idProfessor) {
+		this.idProfessor = idProfessor;
 	}
 	
-	public static String getNomeEvento() {
+	public  String getNomeEvento() {
 		return nomeEvento;
 	}
-	public static void setNomeEvento(String nomeEvento) {
-		ReservaEvento.nomeEvento = nomeEvento;
+	public  void setNomeEvento(String nomeEvento) {
+		this.nomeEvento = nomeEvento;
 	}
-	public static String getHorarioEvento() {
+	public  String getHorarioEvento() {
 		return horarioEvento;
 	}
-	public static void setHorarioEvento(String horarioEvento) {
-		ReservaEvento.horarioEvento = horarioEvento;
+	public  void setHorarioEvento(String horarioEvento) {
+		this.horarioEvento = horarioEvento;
 	}
-	public static String getDataEvento() {
+	public  String getDataEvento() {
 		return dataEvento;
 	}
-	public static void setDataEvento(String dataEvento) {
-		ReservaEvento.dataEvento = dataEvento;
+	public  void setDataEvento(String dataEvento) {
+		this.dataEvento = dataEvento;
 	}
-	public static String getDescricaoEvento() {
+	public  String getDescricaoEvento() {
 		return descricaoEvento;
 	}
-	public static void setDescricaoEvento(String descricaoEvento) {
-		ReservaEvento.descricaoEvento = descricaoEvento;
+	public  void setDescricaoEvento(String descricaoEvento) {
+		this.descricaoEvento = descricaoEvento;
 	}
 	
 	
