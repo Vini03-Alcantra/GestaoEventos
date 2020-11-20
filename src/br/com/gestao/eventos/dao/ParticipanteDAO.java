@@ -89,15 +89,20 @@ public class ParticipanteDAO {
 	}
 	
 	public void update(Participante participante) {
-		String sql = "";
+		String sql = "UPDATE participante SET nomeParticipante = ?, matriculaParticipante = ?, cursoParticipante = ? WHERE idParticipante = ?";
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
 		try {
 			conn = ConnectionFactory.createConnectionToMySQL();
-			
-			// 
 			pstm = (PreparedStatement) conn.prepareStatement(sql);
+			
+			pstm.setString(1, participante.getNomeParticipante());
+			pstm.setInt(2, participante.getMatriculaParticipante());
+			pstm.setString(3, participante.getCursoParticipante());
+			pstm.setInt(4, participante.getIdParticipante());
+			
+			pstm.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -109,7 +114,7 @@ public class ParticipanteDAO {
 				
 				if(conn!=null) {
 					conn.close();
-				}
+				}				
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
