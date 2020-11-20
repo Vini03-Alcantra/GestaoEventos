@@ -122,15 +122,16 @@ public class ParticipanteDAO {
 	}
 	
 	public void delete(Participante participante) {
-		String sql = "";
+		String sql = "DELETE FROM participante WHERE idParticipante = ?";
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
 		try {
-			conn = ConnectionFactory.createConnectionToMySQL();
-			
-			// 
+			conn = ConnectionFactory.createConnectionToMySQL();			
 			pstm = (PreparedStatement) conn.prepareStatement(sql);
+			
+			pstm.setInt(1, participante.getIdParticipante());
+			pstm.execute();
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
