@@ -1,43 +1,43 @@
 package br.com.gestao.eventos.model;
 
 public class Participante {
-	private static int idReservaEvento;	
-	private static int idParticipante;	
-	private static String nomeParticipante;
-	private static int matriculaParticipante;
-	private static String cursoParticipante;
+	private  int idReservaEvento;	
+	private  int idthis;	
+	private  String nomethis;
+	private  int matriculathis;
+	private  String cursothis;
 	
-	public static int getIdReservaEvento() {
+	public  int getIdReservaEvento() {
 		return idReservaEvento;
 	}
-	public static void setIdReservaEvento(int idReservaEvento) {
-		Participante.idReservaEvento = idReservaEvento;
+	public  void setIdReservaEvento(int idReservaEvento) {
+		this.idReservaEvento = idReservaEvento;
 	}
 	
-	public static int getIdParticipante() {
-		 return idParticipante;
+	public  int getIdthis() {
+		 return idthis;
 	}
-	public static void setIdParticipante(int idParticipante) {
-		Participante.idParticipante = idParticipante;
+	public  void setIdthis(int idthis) {
+		this.idthis = idthis;
 	}
 	
-	public static String getNomeParticipante() {
-		return nomeParticipante;
+	public  String getNomethis() {
+		return nomethis;
 	}
-	public static void setNomeParticipante(String nomeParticipante) {
-		Participante.nomeParticipante = nomeParticipante;
+	public  void setNomethis(String nomethis) {
+		this.nomethis = nomethis;
 	}
-	public static int getMatriculaParticipante() {
-		return matriculaParticipante;
+	public  int getMatriculathis() {
+		return matriculathis;
 	}
-	public static void setMatriculaParticipante(int matriculaParticipante) {
-		Participante.matriculaParticipante = matriculaParticipante;
+	public  void setMatriculathis(int matriculathis) {
+		this.matriculathis = matriculathis;
 	}
-	public static String getCursoParticipante() {
-		return cursoParticipante;
+	public  String getCursothis() {
+		return cursothis;
 	}
-	public static void setCursoParticipante(String cursoParticipante) {
-		Participante.cursoParticipante = cursoParticipante;
+	public  void setCursothis(String cursothis) {
+		this.cursothis = cursothis;
 	}
 	
 	
