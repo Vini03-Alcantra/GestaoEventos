@@ -1,35 +1,35 @@
 package br.com.gestao.eventos.model;
 
 public class Sugestoes {
-	private static int idSugestoes;	
-	private static String emailEnviado;
-	private static String nomeEnviado;
-	private static String assunto;
+	private  int idthis;	
+	private  String emailEnviado;
+	private  String nomeEnviado;
+	private  String assunto;
 	
-	public static int getIdSugestoes() {
-		return idSugestoes;
+	public  int getIdthis() {
+		return idthis;
 	}
-	public static void setIdSugestoes(int idSugestoes) {
-		Sugestoes.idSugestoes = idSugestoes;
+	public  void setIdthis(int idthis) {
+		this.idthis = idthis;
 	}
 	
-	public static String getEmailEnviado() {
+	public  String getEmailEnviado() {
 		return emailEnviado;
 	}
-	public static void setEmailEnviado(String emailEnviado) {
-		Sugestoes.emailEnviado = emailEnviado;
+	public  void setEmailEnviado(String emailEnviado) {
+		this.emailEnviado = emailEnviado;
 	}
-	public static String getNomeEnviado() {
+	public  String getNomeEnviado() {
 		return nomeEnviado;
 	}
-	public static void setNomeEnviado(String nomeEnviado) {
-		Sugestoes.nomeEnviado = nomeEnviado;
+	public  void setNomeEnviado(String nomeEnviado) {
+		this.nomeEnviado = nomeEnviado;
 	}
-	public static String getAssunto() {
+	public  String getAssunto() {
 		return assunto;
 	}
-	public static void setAssunto(String assunto) {
-		Sugestoes.assunto = assunto;
+	public  void setAssunto(String assunto) {
+		this.assunto = assunto;
 	}
 	
 	
