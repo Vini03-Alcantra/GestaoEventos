@@ -12,7 +12,7 @@ public class ConnectionFactory {
 	private static final String PASSWORD = "admin123456";
 
 	//Caminho do banco de dados, porta, nome do Banco
-	private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/agenda?useTimezone=true&serverTimezone=UTC&useSSL=false";
+	private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/gestaoeventos?useTimezone=true&serverTimezone=UTC&useSSL=false";
 
 	//Conexão com o banco de dados
 	public static Connection createConnectionToMySQL() throws SQLException, ClassNotFoundException {
