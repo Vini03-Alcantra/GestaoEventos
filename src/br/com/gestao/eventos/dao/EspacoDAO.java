@@ -2,6 +2,8 @@ package br.com.gestao.eventos.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 import br.com.gestao.eventos.factory.ConnectionFactory;
@@ -42,14 +44,29 @@ public class EspacoDAO {
 	}
 	
 	public List<Espaco> readEspaco(){
-		String sql = "";
+		String sql = "SELECT * FROM espaco";
+		
+		List<Espaco> espacos = new ArrayList<Espaco>();
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
+		
+		ResultSet rset = null;
 		try {
-			conn = ConnectionFactory.createConnectionToMySQL();
-			
+			conn = ConnectionFactory.createConnectionToMySQL();			
 			pstm = (PreparedStatement) conn.prepareStatement(sql);
+			rset = pstm.executeQuery();
+			
+			while(rset.next()) {
+				Espaco espaco = new Espaco();
+				
+				espaco.setIdEspaco(rset.getInt("idEspaco"));
+				espaco.setNome_espaco(rset.getString("nome_espaco"));
+				espaco.setLimite_participantes(rset.getInt("limite_participantes"));
+				espaco.setDescricao(rset.getString(rset.getString("descricao")));
+				
+				espacos.add(espaco);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}  finally {
@@ -62,10 +79,16 @@ public class EspacoDAO {
 				if(conn!=null) {
 					conn.close();
 				}
+				
+				if(rset!=null) {
+					rset.close();
+				}
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
 		}
+		
+		return espacos;
 	}
 	
 	public void update(Espaco espaco) {
