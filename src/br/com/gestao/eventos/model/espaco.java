@@ -1,9 +1,17 @@
 package br.com.gestao.eventos.model;
 
 public class Espaco {
+	private static int idEspaco;	
 	private static String nome_espaco;
 	private static int  limite_participantes;
 	private static String descricao;
+	
+	public static int getIdEspaco() {
+		return idEspaco;
+	}
+	public static void setIdEspaco(int idEspaco) {
+		Espaco.idEspaco = idEspaco;
+	}
 	
 	public static String getNome_espaco() {
 		return nome_espaco;

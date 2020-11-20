@@ -1,12 +1,19 @@
 package br.com.gestao.eventos.model;
 
 public class Administrador {
+	private static int idAdministrador;	
 	private static String nomeAdministrador;
 	private static String emailAdministrador;
 	private static String senhaAdministrador;
 	private static String loginAdministrador;
 	private static int registroAdministrador;
 	
+	public static int getIdAdministrador() {
+		return idAdministrador;
+	}
+	public static void setIdAdministrador(int idAdministrador) {
+		Administrador.idAdministrador = idAdministrador;
+	}
 	
 	public static String getNomeAdministrador() {
 		return nomeAdministrador;
