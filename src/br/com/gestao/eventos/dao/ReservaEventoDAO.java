@@ -91,15 +91,19 @@ public class ReservaEventoDAO {
 	}
 	
 	public void update(ReservaEvento reservaEvento) {
-		String sql = "";
+		String sql = "UPDATE reservaevento SET nomeEvento, horarioEvento, dataEvento, descricaoEvento WHERE idReservaEvento = ?";
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
 		try {
 			conn = ConnectionFactory.createConnectionToMySQL();
-			
-			// 
 			pstm = (PreparedStatement) conn.prepareStatement(sql);
+			pstm.setString(1, reservaEvento.getNomeEvento());
+			pstm.setString(2, reservaEvento.getHorarioEvento());
+			pstm.setString(3, reservaEvento.getDataEvento());
+			pstm.setString(4, reservaEvento.getDescricaoEvento());
+			
+			pstm.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -119,15 +123,15 @@ public class ReservaEventoDAO {
 	}
 	
 	public void delete(ReservaEvento reservaEvento) {
-		String sql = "";
+		String sql = "DELETE reservaevento WHERE idReservaEvento = ?";
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
 		try {
 			conn = ConnectionFactory.createConnectionToMySQL();
-			
-			// 
 			pstm = (PreparedStatement) conn.prepareStatement(sql);
+			pstm.setInt(1, reservaEvento.getIdReservaEvento());
+			pstm.execute();
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
