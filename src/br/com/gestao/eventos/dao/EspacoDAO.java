@@ -92,14 +92,17 @@ public class EspacoDAO {
 	}
 	
 	public void update(Espaco espaco) {
-		String sql = "";
+		String sql = "UPDATE espaco SET nome_espaco = ?, limite_participantes = ?, descricao = ? WHERE = idEspaco";
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
 		try {
 			conn = ConnectionFactory.createConnectionToMySQL();
-			
 			pstm = (PreparedStatement) conn.prepareStatement(sql);
+			
+			pstm.setString(1, espaco.getNome_espaco());
+			pstm.setInt(2, espaco.getLimite_participantes());
+			pstm.setString(3, espaco.getDescricao());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}  finally {
