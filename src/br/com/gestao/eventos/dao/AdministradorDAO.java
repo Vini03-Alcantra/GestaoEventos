@@ -66,6 +66,7 @@ public class AdministradorDAO {
 			while(rset.next()) {
 				Administrador administrador = new Administrador();
 				
+				administrador.setIdAdministrador(rset.getInt("idAdministrador"));
 				administrador.setNomeAdministrador(rset.getString("nomeAdministrador"));
 				administrador.setEmailAdministrador(rset.getString("emailAdministrador"));
 				administrador.setSenhaAdministrador(rset.getString("senhaAdministrador"));
@@ -113,7 +114,7 @@ public class AdministradorDAO {
 			pstm.setString(3, administrador.getSenhaAdministrador());
 			pstm.setString(4, administrador.getLoginAdministrador());
 			pstm.setInt(5, administrador.getRegistroAdministrador());
-			
+			pstm.setInt(6, administrador.getIdAdministrador());
 			pstm.executeQuery();
 			
 			System.out.println("Administrador atualizado com sucesso");
@@ -131,8 +132,8 @@ public class AdministradorDAO {
 
 	}
 	
-	public void delete(Administrador administrador) {
-		String sql = "INSERT INTO administrador (nomeAdministrador, emailAdministrador, senhaAdministrador, loginAdministrador) VALUES(?,?,?,?)";
+	public void delete(Administrador administrador) throws SQLException {
+		String sql = "DELETE FROM administrador WHERE idAdministrador = ?";
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
@@ -142,10 +143,19 @@ public class AdministradorDAO {
 			
 			//Criando uma preparedStatement
 			pstm = conn.prepareStatement(sql);
+			pstm.setInt(1, administrador.getIdAdministrador());
 			
-			//Adicionar valores esperados pelo sql
-		} catch (Exception e) {
-			// TODO: handle exception
+		} catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("Deu erro na exclusão");
+		} finally {
+			if (conn != null) {
+				conn.close();				
+			}
+			
+			if (pstm != null) {
+				pstm.close();
+			}
 		}
 
 	}
