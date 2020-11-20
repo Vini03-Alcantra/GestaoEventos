@@ -2,10 +2,10 @@ package br.com.gestao.eventos.model;
 
 public class Participante {
 	private  int idReservaEvento;	
-	private  int idthis;	
-	private  String nomethis;
-	private  int matriculathis;
-	private  String cursothis;
+	private  int idParticipante;	
+	private  String nomeParticipante;
+	private  int matriculaParticipante;
+	private  String cursoParticipante;
 	
 	public  int getIdReservaEvento() {
 		return idReservaEvento;
@@ -14,30 +14,30 @@ public class Participante {
 		this.idReservaEvento = idReservaEvento;
 	}
 	
-	public  int getIdthis() {
-		 return idthis;
+	public  int getIdParticipante() {
+		 return idParticipante;
 	}
-	public  void setIdthis(int idthis) {
-		this.idthis = idthis;
+	public  void setIdParticipante(int idParticipante) {
+		this.idParticipante = idParticipante;
 	}
 	
-	public  String getNomethis() {
-		return nomethis;
+	public  String getNomeParticipante() {
+		return nomeParticipante;
 	}
-	public  void setNomethis(String nomethis) {
-		this.nomethis = nomethis;
+	public  void setNomeParticipante(String nomeParticipante) {
+		this.nomeParticipante = nomeParticipante;
 	}
-	public  int getMatriculathis() {
-		return matriculathis;
+	public  int getMatriculaParticipante() {
+		return matriculaParticipante;
 	}
-	public  void setMatriculathis(int matriculathis) {
-		this.matriculathis = matriculathis;
+	public  void setMatriculaParticipante(int matriculaParticipante) {
+		this.matriculaParticipante = matriculaParticipante;
 	}
-	public  String getCursothis() {
-		return cursothis;
+	public  String getCursoParticipante() {
+		return cursoParticipante;
 	}
-	public  void setCursothis(String cursothis) {
-		this.cursothis = cursothis;
+	public  void setCursoParticipante(String cursoParticipante) {
+		this.cursoParticipante = cursoParticipante;
 	}
 	
 	

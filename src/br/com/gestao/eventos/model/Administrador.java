@@ -1,49 +1,49 @@
 package br.com.gestao.eventos.model;
 
 public class Administrador {
-	private int idthis;	
-	private String nomethis;
-	private String emailthis;
-	private String senhathis;
-	private String loginthis;
-	private int registrothis;
+	private  int idAdministrador;	
+	private  String nomeAdministrador;
+	private  String emailAdministrador;
+	private  String senhaAdministrador;
+	private  String loginAdministrador;
+	private  int registroAdministrador;
 	
-	public  int getIdthis() {
-		return idthis;
+	public  int getIdAdministrador() {
+		return idAdministrador;
 	}
-	public  void setIdthis(int idthis) {
-		this.idthis = idthis;
+	public  void setIdAdministrador(int idAdministrador) {
+		this.idAdministrador = idAdministrador;
 	}
 	
-	public  String getNomethis() {
-		return nomethis;
+	public  String getNomeAdministrador() {
+		return nomeAdministrador;
 	}
-	public  void setNomethis(String nomethis) {
-		this.nomethis = nomethis;
+	public  void setNomeAdministrador(String nomeAdministrador) {
+		this.nomeAdministrador = nomeAdministrador;
 	}
-	public  String getEmailthis() {
-		return emailthis;
+	public  String getEmailAdministrador() {
+		return emailAdministrador;
 	}
-	public  void setEmailthis(String emailthis) {
-		this.emailthis = emailthis;
+	public  void setEmailAdministrador(String emailAdministrador) {
+		this.emailAdministrador = emailAdministrador;
 	}
-	public  String getSenhathis() {
-		return senhathis;
+	public  String getSenhaAdministrador() {
+		return senhaAdministrador;
 	}
-	public  void setSenhathis(String senhathis) {
-		this.senhathis = senhathis;
+	public  void setSenhaAdministrador(String senhaAdministrador) {
+		this.senhaAdministrador = senhaAdministrador;
 	}
-	public  String getLoginthis() {
-		return loginthis;
+	public  String getLoginAdministrador() {
+		return loginAdministrador;
 	}
-	public  void setLoginthis(String loginthis) {
-		this.loginthis = loginthis;
+	public  void setLoginAdministrador(String loginAdministrador) {
+		this.loginAdministrador = loginAdministrador;
 	}
-	public  int getRegistrothis() {
-		return registrothis;
+	public  int getRegistroAdministrador() {
+		return registroAdministrador;
 	}
-	public  void setRegistrothis(int registrothis) {
-		this.registrothis = registrothis;
+	public  void setRegistroAdministrador(int registroAdministrador) {
+		this.registroAdministrador = registroAdministrador;
 	}
 	
 	

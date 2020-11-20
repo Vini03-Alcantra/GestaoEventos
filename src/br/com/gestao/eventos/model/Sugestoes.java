@@ -1,16 +1,16 @@
 package br.com.gestao.eventos.model;
 
 public class Sugestoes {
-	private  int idthis;	
+	private  int idSugestoes;	
 	private  String emailEnviado;
 	private  String nomeEnviado;
 	private  String assunto;
 	
-	public  int getIdthis() {
-		return idthis;
+	public  int getIdSugestoes() {
+		return idSugestoes;
 	}
-	public  void setIdthis(int idthis) {
-		this.idthis = idthis;
+	public  void setIdSugestoes(int idSugestoes) {
+		this.idSugestoes = idSugestoes;
 	}
 	
 	public  String getEmailEnviado() {

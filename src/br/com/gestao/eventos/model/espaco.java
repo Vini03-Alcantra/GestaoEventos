@@ -1,23 +1,23 @@
 package br.com.gestao.eventos.model;
 
 public class Espaco {
-	private  int idthis;	
-	private  String nome_this;
+	private  int idEspaco;	
+	private  String nome_espaco;
 	private  int  limite_participantes;
 	private  String descricao;
 	
-	public  int getIdthis() {
-		return idthis;
+	public  int getIdEspaco() {
+		return idEspaco;
 	}
-	public  void setIdthis(int idthis) {
-		this.idthis = idthis;
+	public  void setIdEspaco(int idEspaco) {
+		this.idEspaco = idEspaco;
 	}
 	
-	public  String getNome_this() {
-		return nome_this;
+	public  String getNome_espaco() {
+		return nome_espaco;
 	}
-	public  void setNome_this(String nome_this) {
-		this.nome_this = nome_this;
+	public  void setNome_espaco(String nome_espaco) {
+		this.nome_espaco = nome_espaco;
 	}
 	public  int getLimite_participantes() {
 		return limite_participantes;
