@@ -2,13 +2,17 @@ package br.com.gestao.eventos.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.gestao.eventos.factory.ConnectionFactory;
 import br.com.gestao.eventos.model.Administrador;
 
 public class AdministradorDAO {
 	
-	public void save(Administrador administrador) {
+	public void save(Administrador administrador) throws SQLException {
 		String sql = "INSERT INTO administrador (nomeAdministrador, emailAdministrador, senhaAdministrador, loginAdministrador) VALUES(?,?,?,?)";
 		
 		Connection conn = null;
@@ -40,11 +44,16 @@ public class AdministradorDAO {
 		}
 	}
 	
-	public List<Administrador> readAdministradores{
-		String sql = "INSERT INTO administrador (nomeAdministrador, emailAdministrador, senhaAdministrador, loginAdministrador) VALUES(?,?,?,?)";
+	public List<Administrador> readAdministradores(){
+		String sql = "SELECT * FROM administradores";
+		
+		List<Administrador> administradores = new ArrayList<Administrador>();
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
+		
+		//Classe que vai recuperar os dados do banco
+		ResultSet rset = null;
 		try {
 			//Chamando conexão
 			conn = ConnectionFactory.createConnectionToMySQL();
@@ -52,15 +61,43 @@ public class AdministradorDAO {
 			//Criando uma preparedStatement
 			pstm = conn.prepareStatement(sql);
 			
-			//Adicionar valores esperados pelo sql
+			rset = pstm.executeQuery();
+			
+			while(rset.next()) {
+				Administrador administrador = new Administrador();
+				
+				administrador.setNomeAdministrador(rset.getString("nomeAdministrador"));
+				administrador.setEmailAdministrador(rset.getString("emailAdministrador"));
+				administrador.setSenhaAdministrador(rset.getString("senhaAdministrador"));
+				administrador.setLoginAdministrador(rset.getString("loginAdministrador"));
+				administrador.setRegistroAdministrador(rset.getInt("registroAdministrador"));
+				
+				administradores.add(administrador);
+			}
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			try {
+				if(rset!=null) {
+					rset.close();
+				}
+				
+				if(conn!=null) {
+					rset.close();
+				}
+				
+				if(pstm != null) {
+					pstm.close();
+				}
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
 		}
-
+		return administradores;
 	}
 	
 	public void update(Administrador administrador) {
-		String sql = "INSERT INTO administrador (nomeAdministrador, emailAdministrador, senhaAdministrador, loginAdministrador) VALUES(?,?,?,?)";
+		String sql = "UPDATE administrador SET nomeAdministrador = ?, emailAdministrador = ?, senhaAdministrador = ?, loginAdministrador = ? WHERE id = ?";
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
