@@ -103,6 +103,8 @@ public class EspacoDAO {
 			pstm.setString(1, espaco.getNome_espaco());
 			pstm.setInt(2, espaco.getLimite_participantes());
 			pstm.setString(3, espaco.getDescricao());
+			
+			pstm.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}  finally {
@@ -122,14 +124,16 @@ public class EspacoDAO {
 	}
 	
 	public void delete(Espaco espaco) {
-		String sql = "";
+		String sql = "DELETE FROM espaco WHERE idEspaco = ?";
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
 		try {
 			conn = ConnectionFactory.createConnectionToMySQL();
-			
 			pstm = (PreparedStatement) conn.prepareStatement(sql);
+			
+			pstm.setInt(1, espaco.getIdEspaco());
+			pstm.execute();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}  finally {
