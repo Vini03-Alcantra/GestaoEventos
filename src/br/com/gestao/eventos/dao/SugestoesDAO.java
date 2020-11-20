@@ -2,6 +2,8 @@ package br.com.gestao.eventos.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 import br.com.gestao.eventos.factory.ConnectionFactory;
@@ -41,16 +43,26 @@ public class SugestoesDAO {
 		}
 	}
 	
-	public List<Sugestoes> read(){
-		String sql = "";
+	public List<Sugestoes> readSugestoes(){
+		String sql = "SELECT * FROM sugestoes";
+		
+		List<Sugestoes> sugestoes = new ArrayList<Sugestoes>();
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
+		ResultSet rset = null;
 		try {
-			conn = ConnectionFactory.createConnectionToMySQL();
-			
-			// 
+			conn = ConnectionFactory.createConnectionToMySQL();			
 			pstm = (PreparedStatement) conn.prepareStatement(sql);
+			rset = pstm.executeQuery();
+			
+			while(rset.next()) {
+				Sugestoes sugestao = new Sugestoes();
+				
+				sugestao.setIdSugestoes(rset.getInt("idSugestoes"));
+				sugestao.setEmailEnviado(rset.getString("emailEnviado"));
+				sugestao.setNomeEnviado(rset.getString("nomeEnviado"));
+			}
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -63,10 +75,15 @@ public class SugestoesDAO {
 				if(conn!=null) {
 					conn.close();
 				}
+				
+				if (rset != null) {
+					rset.close();
+				}
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
 		}
+		return sugestoes;
 	}
 	
 	public void update(Sugestoes sugestoes) {
