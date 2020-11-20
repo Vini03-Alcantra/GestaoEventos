@@ -87,15 +87,18 @@ public class SugestoesDAO {
 	}
 	
 	public void update(Sugestoes sugestoes) {
-		String sql = "";
+		String sql = "UPDATE sugestoes SET emailEnviado = ?, nomeEnviado = ?, assunto = ? WHERE idSugestoes = ?";
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
 		try {
 			conn = ConnectionFactory.createConnectionToMySQL();
-			
-			// 
 			pstm = (PreparedStatement) conn.prepareStatement(sql);
+			
+			pstm.setString(1, sugestoes.getEmailEnviado());
+			pstm.setString(2, sugestoes.getNomeEnviado());
+			pstm.setString(3, sugestoes.getAssunto());
+			pstm.setInt(4, sugestoes.getIdSugestoes());
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {

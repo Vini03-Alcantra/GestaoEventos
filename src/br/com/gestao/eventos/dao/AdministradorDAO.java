@@ -98,7 +98,7 @@ public class AdministradorDAO {
 	}
 	
 	public void update(Administrador administrador) throws SQLException {
-		String sql = "UPDATE administrador SET nomeAdministrador = ?, emailAdministrador = ?, senhaAdministrador = ?, loginAdministrador = ?, registroAdministrador = ? WHERE id = ?";
+		String sql = "UPDATE administrador SET nomeAdministrador = ?, emailAdministrador = ?, senhaAdministrador = ?, loginAdministrador = ?, registroAdministrador = ? WHERE idAdministrador = ?";
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;

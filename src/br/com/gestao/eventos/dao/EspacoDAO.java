@@ -92,7 +92,7 @@ public class EspacoDAO {
 	}
 	
 	public void update(Espaco espaco) {
-		String sql = "UPDATE espaco SET nome_espaco = ?, limite_participantes = ?, descricao = ? WHERE = idEspaco";
+		String sql = "UPDATE espaco SET nome_espaco = ?, limite_participantes = ?, descricao = ? WHERE idEspaco = ?";
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
