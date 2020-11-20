@@ -118,15 +118,15 @@ public class SugestoesDAO {
 	}
 	
 	public void delete(Sugestoes sugestoes) {
-		String sql = "";
+		String sql = "DELETE FROM sugestoes WHERE idSugestoes = ?";
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
 		try {
 			conn = ConnectionFactory.createConnectionToMySQL();
-			
-			// 
 			pstm = (PreparedStatement) conn.prepareStatement(sql);
+			pstm.setInt(1, sugestoes.getIdSugestoes());
+			pstm.execute();
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
