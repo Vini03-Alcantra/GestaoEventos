@@ -96,8 +96,8 @@ public class AdministradorDAO {
 		return administradores;
 	}
 	
-	public void update(Administrador administrador) {
-		String sql = "UPDATE administrador SET nomeAdministrador = ?, emailAdministrador = ?, senhaAdministrador = ?, loginAdministrador = ? WHERE id = ?";
+	public void update(Administrador administrador) throws SQLException {
+		String sql = "UPDATE administrador SET nomeAdministrador = ?, emailAdministrador = ?, senhaAdministrador = ?, loginAdministrador = ?, registroAdministrador = ? WHERE id = ?";
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
@@ -108,9 +108,25 @@ public class AdministradorDAO {
 			//Criando uma preparedStatement
 			pstm = conn.prepareStatement(sql);
 			
-			//Adicionar valores esperados pelo sql
+			pstm.setString(1, administrador.getNomeAdministrador());
+			pstm.setString(2, administrador.getEmailAdministrador());
+			pstm.setString(3, administrador.getSenhaAdministrador());
+			pstm.setString(4, administrador.getLoginAdministrador());
+			pstm.setInt(5, administrador.getRegistroAdministrador());
+			
+			pstm.executeQuery();
+			
+			System.out.println("Administrador atualizado com sucesso");
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println("Deu erro na operação de atualização do administrador");
+		} finally {
+			if(conn != null) {
+				conn.close();
+			}
+			
+			if (pstm != null) {
+				pstm.close();
+			}
 		}
 
 	}
