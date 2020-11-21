@@ -1,19 +1,19 @@
 package br.com.gestao.eventos.model;
 
 public class Participante {
-	private  int idReservaEvento;	
+		
 	private  int idParticipante;	
 	private  String nomeParticipante;
 	private  int matriculaParticipante;
-	private  String cursoParticipante;
+	private  String emailParticipante; 
+	private  String senhaParticipante;
 	
-	public  int getIdReservaEvento() {
-		return idReservaEvento;
+	public String getEmailParticipante() {
+		return emailParticipante;
 	}
-	public  void setIdReservaEvento(int idReservaEvento) {
-		this.idReservaEvento = idReservaEvento;
+	public void setEmailParticipante(String emailParticipante) {
+		this.emailParticipante = emailParticipante;
 	}
-	
 	public  int getIdParticipante() {
 		 return idParticipante;
 	}
@@ -33,12 +33,15 @@ public class Participante {
 	public  void setMatriculaParticipante(int matriculaParticipante) {
 		this.matriculaParticipante = matriculaParticipante;
 	}
-	public  String getCursoParticipante() {
-		return cursoParticipante;
+	public String getSenhaParticipante() {
+		return senhaParticipante;
 	}
-	public  void setCursoParticipante(String cursoParticipante) {
-		this.cursoParticipante = cursoParticipante;
+	public void setSenhaParticipante(String senhaParticipante) {
+		this.senhaParticipante = senhaParticipante;
 	}
+
+
+	
 	
 	
 }
