@@ -1,14 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-<title> Gestão de eventos </title>
+<meta charset="utf-8">
+<title> GestÃ£o de eventos </title>
 <meta charset='utf-8' />
-<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="../CSS/style.css" />
 </head>
 <body>
     
 <!--MENU-->
-<h1>Gestão de eventos</h1>
+<h1>GestÃ£o de eventos</h1>
 
 <nav class="nav">
 	<ul>
@@ -82,18 +86,18 @@ $(".drop")
           </p>
           
           <p class="link">
-            Ainda não tem conta?
+            Ainda nÃ£o tem conta?
             <a href="#paracadastro">Cadastre-se</a>
           </p>
         </form>
       </div>
 
 
-<!-- Formulário de Login -->
+<!-- FormulÃ¡rio de Login -->
   <form action="validacao.php" method="post">
   <fieldset>
   <legend>Dados de Login</legend>
-      <label for="txUsuario">Usuário</label>
+      <label for="txUsuario">UsuÃ¡rio</label>
       <input type="text" name="usuario" id="txUsuario" maxlength="25" />
       <label for="txSenha">Senha</label>
       <input type="password" name="senha" id="txSenha" />
@@ -117,7 +121,7 @@ $(".drop")
 
 
 
-      <!--FORMULÁRIO DE CADASTRO-->
+      <!--FORMULÃRIO DE CADASTRO-->
       <div id="cadastro">
         <form method="post" action=""> 
           <h1>Cadastro</h1> 
@@ -143,7 +147,7 @@ $(".drop")
           </p>
           
           <p class="link">  
-            Já tem conta?
+            JÃ¡ tem conta?
             <a href="#paralogin"> Ir para Login </a>
           </p>
         </form>
