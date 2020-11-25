@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="../CSS/style.css" />
+</head>
+<body>
+  
+  <!-- <form method="post" action="../JSP/Sugestoes_JSP.jsp">
+  <label for="senha_login">Motivo do contato</label> <select name="subject" id="subject">
+      <option value="" selected="selected">Selecione</option>
+      <option value="" selected="selected">Informação</option>
+      <option value="" selected="selected">Sugestões</option>
+      <option value="" selected="selected">Elogio</option>
+    </select>
+    <br><br>
+  <p><b>Nome:</b></p>
+  <input name="nome" type="text" size="45"><br>
+  <p><b>Email:</b></p>
+  <input name="email" type="text" size="45"><br>
+  <p><b>Assunto:</b><p>
+  <textarea name="mensagem" rows="10" cols="60" wrap="virtual"></textarea></p><br>
+  <input type="submit" value="Enviar Email"> <input type="reset" value="Limpar Formulário"></p>
+  </form> -->
+
+  <form method="post" action="../JSP/Sugestoes_JSP.jsp"> 
+    <h1>Cadastro</h1> 
+
+    
+    <p> 
+      <label for="nome_cad">Nome completo</label>
+      <input id="nome_cad" name="nome" required="required" type="text" placeholder="" />
+    </p>
+    
+    <p> 
+      <label for="email_cad">e-mail</label>
+      <input id="email_cad" name="email" required="required" type="email" placeholder=""/> 
+    </p>
+    
+    <p> 
+      <label for="email_cad">Matrícula</label>
+      <input id="matricula_cad" name="mensagem" required="required" type="text" placeholder=""/> 
+    </p>
+    
+    <p> 
+      <input type="submit" value="Cadastrar"/> 
+    </p>
+    
+    <p class="link">  
+      Já tem conta?
+      <a href="#paralogin"> Ir para Login </a>
+    </p>
+  </form>
+  
+</body>
+</html>

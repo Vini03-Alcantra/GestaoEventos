@@ -25,7 +25,7 @@ public class SugestoesDAO {
 			pstm.setString(3, sugestoes.getAssunto());
 			
 			pstm.execute();
-		} catch(Exception e) {
+		} catch(Exception e) {			
 			e.printStackTrace();
 		} finally {
 			//Fechar as conexões
