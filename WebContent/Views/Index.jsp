@@ -1,20 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html lang="pt-Br">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Painel Principal</title>
-<link rel="stylesheet" href="../CSS/StyleIndex.css">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
 </head>
 <body>
-    <div class="content">
+	    <div class="content">
         <h1>Painel Principal</h1>
         <table class="eventos">
             <thead>
                 <tr>
                     <th>Local</th>
-                    <th>Descri√ß√£o</th>
+                    <th>DescriÁ„o</th>
                     <th>Professor</th>
-                    <th>Hor√°rio</th>
+                    <th>Hor·rio</th>
                     <th>Data</th>
                 </tr>
             </thead>
@@ -56,7 +57,7 @@
                 </tr>
             </tbody>
         </table>
-    <form>
+    <form action="../JSP/ReservaEvento_JSP.jsp" method="POST">
         <fieldset>
             <legend>Cadastrar Evento</legend>
             <table cellspacing="10">
@@ -126,3 +127,7 @@
     </div>
 </body>
 </html>
+
+
+
+
