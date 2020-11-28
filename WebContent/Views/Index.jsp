@@ -1,13 +1,15 @@
 <%@page import="java.util.List"%>
 <%@page import="br.com.gestao.eventos.model.Espaco"%>
 <%@page import="br.com.gestao.eventos.dao.EspacoDAO"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Painel de Eventos</title>
+
 </head>
 <body>
 <%
@@ -21,9 +23,9 @@
             <thead>
                 <tr>
                     <th>Local</th>
-                    <th>Descrição</th>
+                    <th>DescriÃ§Ã£o</th>
                     <th>Professor</th>
-                    <th>Horário</th>
+                    <th>HorÃ¡rio</th>
                     <th>Data</th>
                 </tr>
             </thead>
@@ -121,10 +123,10 @@
                     
                         <select id="Professor" class="td-select">
                             <option value="#">Tiago Sombra</option>
-                            <option value="#">Kléber Carrha</option>
+                            <option value="#">Klï¿½ber Carrha</option>
                             <option value="#">Pryscilla Sousa</option>
-                            <option value="#">João Leonardo</option>
-                            <option value="#">Júlio Alcântara Távares</option>
+                            <option value="#">Joï¿½o Leonardo</option>
+                            <option value="#">Jï¿½lio Alcï¿½ntara Tï¿½vares</option>
                         </select>                    
                     </td>
                 </tr>
