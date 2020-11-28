@@ -1,12 +1,20 @@
+<%@page import="java.util.List"%>
+<%@page import="br.com.gestao.eventos.model.Espaco"%>
+<%@page import="br.com.gestao.eventos.dao.EspacoDAO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Painel de Eventos</title>
 </head>
 <body>
+<%
+	EspacoDAO espacoDAO = new EspacoDAO();
+	List<Espaco> espaco; 
+
+%>
 	    <div class="content">
         <h1>Painel Principal</h1>
         <table class="eventos">
@@ -97,11 +105,12 @@
                             <label class="td-label" for="Espaco">EspaÃ§o</label>
                         
                             <select id="Espaco" class="td-select">
-                                <option value="#">Quadra Carneiro da Cunha</option>
-                                <option value="#">Quadra Guilherme Rocha</option>
-                                <option value="#">Quadra Conselheiro Estelita</option>
-                                <option value="#">LaboratÃ³rio 1 Carneiro Da Cunha</option>
-                                <option value="#">LaboratÃ³rio 2 Carneiro da Cunha</option>
+                                <option value="#">Quadra Carneiro da Cunha</option>                                
+                                <%for(Espaco e: espacoDAO.readEspaco()){%>
+                                	<option value="#<%=e.getNome_espaco()%>"><%=e.getNome_espaco()%></option>
+                                <%}%>	
+                                
+                                
                             </select>                                            
                     </td>      
                 </tr>
@@ -112,10 +121,10 @@
                     
                         <select id="Professor" class="td-select">
                             <option value="#">Tiago Sombra</option>
-                            <option value="#">KlÃ©ber Carrha</option>
+                            <option value="#">Kléber Carrha</option>
                             <option value="#">Pryscilla Sousa</option>
-                            <option value="#">JoÃ£o Leonardo</option>
-                            <option value="#">JÃºlio AlcÃ¢ntara Tavares</option>
+                            <option value="#">João Leonardo</option>
+                            <option value="#">Júlio Alcântara Távares</option>
                         </select>                    
                     </td>
                 </tr>
