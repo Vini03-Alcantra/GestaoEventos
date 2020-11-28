@@ -56,64 +56,73 @@
                 </tr>
             </tbody>
         </table>
-
+    <form>
         <fieldset>
             <legend>Cadastrar Evento</legend>
             <table cellspacing="10">
-                <tr>
-                    <td>
-                        <label for="Nome">Nome Evento</label>
-                    </td>
-                    <td>
-                        <input id="Nome" type="text"> 
-                    </td>
+                <tr>                    
+                        <td>
+                            <label class="td-label" for="Nome">Nome Evento</label>                    
+                            <input class = "td-input" id="Nome" type="text" />
+                        </td>                     
                 </tr>
                 
-                <tr>
+                <tr>           
+                        <td>
+                            <label class="td-label" for="data">Data</label>
+                            <input class = "td-input" id="data" type="date" />                    
+                        </td>                             
+                </tr>
+                
+                <tr>                    
                     <td>
-                        <label for="horario">Horário</label>
+                        <label class="td-label" for="horInicial">Horário Inicial</label>                                        
+                        <input class = "td-input" id="horInicial" type="time" />
+                                        
+                        <label class="td-label" for="horInicial">Horário Final</label>                    
+                        <input class = "td-input" id="horFinal" type="time" />                    
                     </td>
+                </tr>
+
+                <tr>                        
                     <td>
-                        <input id="horario" type="datetime-local">                        
+                        <p><label class="td-label" for="descricao">Descrição</label></p>
+                        <p><textarea name="Descricao" id="descricao" cols="70" rows="5"></textarea></p>
                     </td>
-                    <td>
-                        <label for="data">Data</label>
-                    </td>
-                    <td>
-                        <input id="data" type="date">
-                    </td>
+                </tr>
+
+                <tr>              
+                    <td>                        
+                            <label class="td-label" for="Espaco">Espaço</label>
+                        
+                            <select id="Espaco" class="td-select">
+                                <option value="#">Quadra Carneiro da Cunha</option>
+                                <option value="#">Quadra Guilherme Rocha</option>
+                                <option value="#">Quadra Conselheiro Estelita</option>
+                                <option value="#">Laboratório 1 Carneiro Da Cunha</option>
+                                <option value="#">Laboratório 2 Carneiro da Cunha</option>
+                            </select>                                            
+                    </td>      
                 </tr>
 
                 <tr>
                     <td>
-                        <label for="descricao">Descriçãp</label>
-                    </td>
-
-                    <td>
-                        <input id="descricao" type="text">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <label for="Espaco">Espaço</label>
-                    </td>
-                    <td>
-                        <input id="Espaco" type="">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <label for="Professor">Professor</label>
-                    </td>
-                    <td>
-                        <input id="Professor" type="">
+                        <label class="td-label" for="Professor">Professor</label>
+                    
+                        <select id="Professor" class="td-select">
+                            <option value="#">Tiago Sombra</option>
+                            <option value="#">Kléber Carrha</option>
+                            <option value="#">Pryscilla Sousa</option>
+                            <option value="#">João Leonardo</option>
+                            <option value="#">Júlio Alcântara Tavares</option>
+                        </select>                    
                     </td>
                 </tr>
 
             </table>
-        </fieldset>
+            <input type="submit" class="btnCadastrarEvent" value="Cadastrar Evento">
+        </fieldset>        
+    </form>
     </div>
 </body>
 </html>
