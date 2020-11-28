@@ -22,6 +22,7 @@ h1{
     margin: 70px 0;
     position: absolute;
     left: 60%;
+    font-family: 'Roboto', sans-serif;
 }
 
 .eventos th{
@@ -69,6 +70,7 @@ legend{
     height: 30px;
     border-radius: 5px;
     padding: 5px 8px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .td-select {
@@ -78,5 +80,20 @@ legend{
 }
 
 textarea{
+    font-family: 'Roboto', sans-serif;
     padding: 10px;
+}
+
+.btnCadastrarEvent{
+    padding: 10px 8px;
+    margin: 30px 0;
+    width: 40%;
+    height: 40%;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    background-color: #7BD7EA;
+    color: blanchedalmond;
 }
