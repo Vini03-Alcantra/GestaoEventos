@@ -5,11 +5,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.servlet.ServletException;
+
+import javax.servlet.http.HttpServletResponse;
+
 import br.com.gestao.eventos.factory.ConnectionFactory;
 
-public class LoginParticipanteDAO {
-	public boolean checkLogin(String login, String senha) throws SQLException {
-		String sql = "SELECT * FROM participante WHERE nomeParticipante = ?, senhaParticipante = ?";
+public class LoginParticipanteDAO  {
+	
+	public boolean checkLogin(String login, String senha) throws SQLException, ServletException{
+		String sql = "SELECT * FROM participante WHERE emailParticipante = ? and senhaParticipante = ?";
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
@@ -19,10 +24,15 @@ public class LoginParticipanteDAO {
 		try {
 			conn = ConnectionFactory.createConnectionToMySQL();
 			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, login);
+			pstm.setString(2, senha);
 			rset = pstm.executeQuery();
+			
 			
 			if(rset.next()) {
 				check = true;
+			} else {
+				check = false;
 			}
 			
 		} catch (Exception e) {
