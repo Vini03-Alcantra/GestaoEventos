@@ -82,4 +82,34 @@ public class ProfessorDAO {
 		
 		return professores;
 	}
+	
+	public void update(Professor professor) throws SQLException {
+		String sql = "UPDATE FROM professor SET nomeProfessor = ?,matriculaProfessor = ?, cursoProfessorVinculado = ?, loginProfessor = ?, senhaProfessor = ?, emailProfessor = ? WHERE idProfessor = ?";
+		Connection conn = null;
+		PreparedStatement pstm = null;
+		
+		try {
+			conn = ConnectionFactory.createConnectionToMySQL();
+			pstm = (PreparedStatement) conn.prepareStatement(sql);
+			
+			pstm.setString(1, professor.getNomeProfessor());
+			pstm.setInt(2, professor.getMatriculaProfessor());
+			pstm.setString(3, professor.getCursoProfessorVinculado());
+			pstm.setString(4, professor.getLoginProfessor());
+			pstm.setString(5, professor.getSenhaPorfessor());
+			pstm.setString(6, professor.getEmailProfessor());
+			
+			pstm.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(pstm!=null) {
+				pstm.close();
+			}
+			
+			if(conn!=null) {
+				conn.close();
+			}
+		}
+	}
 }
