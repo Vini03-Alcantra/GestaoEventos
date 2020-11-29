@@ -11,7 +11,7 @@ import br.com.gestao.eventos.model.ReservaEvento;
 
 public class ReservaEventoDAO {
 	public void save(ReservaEvento reservaEvento) {
-		String sql = "INSERT INTO reservaevento (nomeEvento, horarioEvento, dataEvento, descricaoEvento, idEspaco, idProfessor) VALUES(?,?,?,?,?,?)";
+		String sql = "INSERT INTO reservaevento (nomeEvento, horarioEvento, dataEvento, descricaoEvento, nomeEspaco, nomeProfessor) VALUES(?,?,?,?,?,?)";
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
@@ -23,8 +23,10 @@ public class ReservaEventoDAO {
 			pstm.setString(2, reservaEvento.getHorarioEvento());
 			pstm.setString(3, reservaEvento.getDataEvento());
 			pstm.setString(4, reservaEvento.getDescricaoEvento());
-			pstm.setInt(5, reservaEvento.getIdEspaco());			
-			pstm.setInt(6, reservaEvento.getIdProfessor());
+			pstm.setString(5, reservaEvento.getNomeEspaco());			
+			pstm.setString(6, reservaEvento.getNomeProfessor());
+			
+			pstm.execute();
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -63,8 +65,8 @@ public class ReservaEventoDAO {
 				reservas.setHorarioEvento(rset.getString("horarioEvento"));
 				reservas.setDataEvento(rset.getString("dataEvento"));
 				reservas.setDescricaoEvento(rset.getString("descricaoEvento"));
-				reservas.setIdEspaco(rset.getInt("idEspaco"));
-				reservas.setIdProfessor(rset.getInt("idProfessor"));
+				reservas.setNomeEspaco(rset.getString("nomeEspaco"));
+				reservas.setNomeProfessor(rset.getString("nomeProfessor"));
 				
 				reservaEvento.add(reservas);
 			}
@@ -91,7 +93,7 @@ public class ReservaEventoDAO {
 	}
 	
 	public void update(ReservaEvento reservaEvento) {
-		String sql = "UPDATE reservaevento SET nomeEvento, horarioEvento, dataEvento, descricaoEvento WHERE idReservaEvento = ?";
+		String sql = "UPDATE reservaevento SET nomeEvento, horarioEvento, dataEvento, descricaoEvento, nomeEspaco, nomenomeProfessor WHERE idReservaEvento = ?";
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
@@ -102,7 +104,8 @@ public class ReservaEventoDAO {
 			pstm.setString(2, reservaEvento.getHorarioEvento());
 			pstm.setString(3, reservaEvento.getDataEvento());
 			pstm.setString(4, reservaEvento.getDescricaoEvento());
-			
+			pstm.setString(5, reservaEvento.getNomeEspaco());
+			pstm.setString(6, reservaEvento.getNomeProfessor());
 			pstm.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();

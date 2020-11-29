@@ -19,27 +19,23 @@
 		System.out.println(nomeEvento);
 		String horarioIniEvento = request.getParameter("horarioIniEvento");
 		System.out.println(horarioIniEvento);
-		String horarioFinEvento = request.getParameter("horarioFinEvento");
+		String horarioFinEvento = request.getParameter("horarioFinEvento");		
 		System.out.println(horarioFinEvento);
-		String dataEvento = request.getParameter("dataEvento");
+		String dataEvento = request.getParameter("dataEvento");		
 		System.out.println(dataEvento);
-		String descricaoEvento = request.getParameter("descricaoEvento");
+		String descricaoEvento = request.getParameter("descricaoEvento");		
 		System.out.println(descricaoEvento);
-		String nomeEspaco = request.getParameter("espaco");
+		String nomeEspaco = request.getParameter("espaco");		
 		System.out.println(nomeEspaco);
 		String nomeProfessor = request.getParameter("professor");
 		System.out.println(nomeProfessor);
-		int idEspaco = selectForeignKey.ForeignKeyEspaco(nomeEspaco);
-		System.out.println(idEspaco);
-		int idProfessor = selectForeignKey.ForeingKeyProfessor(nomeProfessor);
-		System.out.println(idProfessor);
 		
 		reservaEvento.setNomeEvento(nomeEvento);
 		reservaEvento.setHorarioEvento(horarioIniEvento+ "-" +horarioFinEvento);
 		reservaEvento.setDataEvento(dataEvento);
 		reservaEvento.setDescricaoEvento(descricaoEvento);
-		reservaEvento.setIdEspaco(idEspaco);
-		reservaEvento.setIdProfessor(idProfessor);
+		reservaEvento.setNomeEspaco(nomeEspaco);
+		reservaEvento.setNomeProfessor(nomeProfessor);
 		
 		reservaEventoDAO.save(reservaEvento);
 		

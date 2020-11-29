@@ -1,3 +1,5 @@
+<%@page import="br.com.gestao.eventos.dao.ReservaEventoDAO"%>
+<%@page import="br.com.gestao.eventos.model.ReservaEvento"%>
 <%@page import="br.com.gestao.eventos.model.Professor"%>
 <%@page import="br.com.gestao.eventos.dao.ProfessorDAO"%>
 <%@page import="java.util.List"%>
@@ -17,6 +19,7 @@
 <%
 	EspacoDAO espacoDAO = new EspacoDAO();
 	ProfessorDAO professorDAO = new ProfessorDAO();
+	ReservaEventoDAO reservaEventoDAO = new ReservaEventoDAO();
 %>
 	    <div class="content">
         <h1>Painel Principal</h1>
@@ -31,41 +34,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>3</td>
-                    <td>3</td>
-                    <td>3</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>4</td>
-                    <td>4</td>
-                    <td>4</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>5</td>
-                    <td>5</td>
-                    <td>5</td>
-                    <td>5</td>
-                </tr>
+                <%for(ReservaEvento re: reservaEventoDAO.read()){%>
+                	<tr>
+                		<td><%=re.getNomeEspaco() %></td>
+                		<td><%=re.getDescricaoEvento() %></td>
+                		<td><%=re.getNomeProfessor() %></td>
+                		<td><%=re.getHorarioEvento() %></td>
+                		<td><%=re.getDataEvento() %></td>
+                	</tr>
+                <%}%>
+                
             </tbody>
         </table>
     <form action="../JSP/ReservaEvento_JSP.jsp" method="POST">
