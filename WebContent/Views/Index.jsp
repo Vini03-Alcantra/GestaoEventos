@@ -38,7 +38,7 @@
                 <%for(ReservaEvento re: reservaEventoDAO.read()){%>
                 	<tr>
                 		<td><%=re.getNomeEspaco() %></td>
-                		<td><%=re.getDescricaoEvento() %></td>
+                		<td><textarea><%=re.getDescricaoEvento() %></textarea></td>
                 		<td><%=re.getNomeProfessor() %></td>
                 		<td><%=re.getHorarioEvento() %></td>
                 		<td><%=re.getDataEvento() %></td>
@@ -78,7 +78,7 @@
                 <tr>                        
                     <td>
                         <p><label class="td-label" for="descricao">Descrição</label></p>
-                        <p><textarea name="descricaoEvento" id="descricao" cols="70" rows="5"></textarea></p>
+                        <p><textarea name="descricaoEvento" id="descricao" cols="60" rows="5"></textarea></p>
                     </td>
                 </tr>
 

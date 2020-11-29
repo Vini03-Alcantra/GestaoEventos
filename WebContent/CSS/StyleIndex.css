@@ -3,7 +3,7 @@
 *{
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
@@ -19,10 +19,13 @@ h1{
 .eventos{
     border: 1px solid black;
     border-collapse: collapse;    
-    margin: 70px 0;
+    margin: 20px 10px;
     position: absolute;
-    left: 60%;
+    left: 38%;
     font-family: 'Roboto', sans-serif;
+    max-width: 10%;
+    height: 20%;
+    font-size: 14px;
 }
 
 .eventos th{
@@ -35,7 +38,7 @@ h1{
 .eventos td{
     border: 1px solid black;
     border-collapse: collapse;
-    padding: 12px;
+    padding: 5px;
     text-align: left;
 }
 
@@ -44,12 +47,12 @@ tr:nth-child(even){
 }
 
 .content{
-    margin: 30px 80px;
+    margin: 5px 20px;
 }
 
 fieldset{
-    width: 50%;
-    padding: 20px;
+    width: 20%;
+    padding: 10px;
 }
 
 legend{
@@ -60,13 +63,14 @@ legend{
 
 
 .td-label{
-    font-size: 22px;
+    font-size: 18px;
     margin-right: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     margin-left: 10px;
 }
 
 .td-input{
+    margin-top: 10px;
     height: 30px;
     border-radius: 5px;
     padding: 5px 8px;
