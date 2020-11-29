@@ -106,8 +106,7 @@
                     <td>                        
                             <label class="td-label" for="Espaco">Espaço</label>
                         
-                            <select id="Espaco" class="td-select">
-                                <option value="#">Quadra Carneiro da Cunha</option>                                
+                            <select id="Espaco" class="td-select">                                                                
                                 <%for(Espaco e: espacoDAO.readEspaco()){%>
                                 	<option value="#<%=e.getNome_espaco()%>"><%=e.getNome_espaco()%></option>
                                 <%}%>	
@@ -122,11 +121,11 @@
                         <label class="td-label" for="Professor">Professor</label>
                     
                         <select id="Professor" class="td-select">
-                            <option value="#">Tiago Sombra</option>
-                            <option value="#">Kl�ber Carrha</option>
-                            <option value="#">Pryscilla Sousa</option>
-                            <option value="#">Jo�o Leonardo</option>
-                            <option value="#">J�lio Alc�ntara T�vares</option>
+                            <option value="#"></option>
+                            <option value="#"></option>
+                            <option value="#"></option>
+                            <option value="#"></option>
+                            <option value="#"></option>
                         </select>                    
                     </td>
                 </tr>

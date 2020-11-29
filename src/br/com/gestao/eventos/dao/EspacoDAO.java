@@ -63,7 +63,7 @@ public class EspacoDAO {
 				espaco.setIdEspaco(rset.getInt("idEspaco"));
 				espaco.setNome_espaco(rset.getString("nome_espaco"));
 				espaco.setLimite_participantes(rset.getInt("limite_participantes"));
-				espaco.setDescricao(rset.getString(rset.getString("descricao")));
+				espaco.setDescricao(rset.getString("descricao"));
 				
 				espacos.add(espaco);
 			}
