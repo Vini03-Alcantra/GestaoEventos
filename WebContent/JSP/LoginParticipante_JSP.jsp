@@ -13,8 +13,9 @@
 	
 		String emailLogin = request.getParameter("email_login");
 		String senhaLogin = request.getParameter("senha_login");
+		String tipoConta = request.getParameter("subject");
 		
-		if(loginParticipanteDAO.checkLogin(emailLogin, senhaLogin)){
+		if(loginParticipanteDAO.checkLogin(emailLogin, senhaLogin, tipoConta)){
 			String urlIndex = "../Views/Index.jsp";
 			response.sendRedirect(urlIndex);
 		} else{

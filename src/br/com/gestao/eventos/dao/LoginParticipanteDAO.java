@@ -13,8 +13,17 @@ import br.com.gestao.eventos.factory.ConnectionFactory;
 
 public class LoginParticipanteDAO  {
 	
-	public boolean checkLogin(String login, String senha) throws SQLException, ServletException{
-		String sql = "SELECT * FROM participante WHERE emailParticipante = ? and senhaParticipante = ?";
+	public boolean checkLogin(String login, String senha, String tipoConta) throws SQLException, ServletException{
+		String sql = "";
+		if(tipoConta == "professor") {
+			sql = "SELECT * FROM professor WHERE emailProfessor = ? and senhaProfessor = ?";
+		} else if(tipoConta == "administrador") {
+			sql = "SELECT * FROM participante WHERE emailAdministrador = ? and senhaAdministrador = ?";
+		} else {
+			sql = "SELECT * FROM participante WHERE emailParticipante = ? and senhaParticipante = ?";
+		}
+		
+		
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
