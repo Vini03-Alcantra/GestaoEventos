@@ -37,8 +37,8 @@ public class ReservaEvento {
 	public String getHorarioEvento() {
 		return horarioEvento;
 	}
-	public void setHorarioEvento(String horarioIniEvento, String horarioFinEvento) {
-		this.horarioEvento = horarioIniEvento + "-" + horarioFinEvento;
+	public void setHorarioEvento(String horarioIniEvento) {
+		this.horarioEvento = horarioIniEvento;
 	}
 	public String getDataEvento() {
 		return dataEvento;

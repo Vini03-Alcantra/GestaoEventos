@@ -22,7 +22,7 @@
 		int idProfessor = Integer.parseInt(request.getParameter("idProfessor"));
 		
 		reservaEvento.setNomeEvento(nomeEvento);
-		reservaEvento.setHorarioEvento(horarioIniEvento, horarioFinEvento);
+		reservaEvento.setHorarioEvento(horarioIniEvento+ "-" +horarioFinEvento);
 		reservaEvento.setDataEvento(dataEvento);
 		reservaEvento.setDescricaoEvento(descricaoEvento);
 		reservaEvento.setIdEspaco(idEspaco);
