@@ -5,6 +5,7 @@
 <%@page import="java.util.List"%>
 <%@page import="br.com.gestao.eventos.model.Espaco"%>
 <%@page import="br.com.gestao.eventos.dao.EspacoDAO"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -13,7 +14,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Painel de Eventos</title>
-
+<link rel="stylesheet" href="../CSS/StyleIndex.css">
 </head>
 <body>
 <%

@@ -15,7 +15,7 @@
 		String senhaLogin = request.getParameter("senha_login");
 		
 		if(loginParticipanteDAO.checkLogin(emailLogin, senhaLogin)){
-			String urlIndex = "../Views/Index.jsp";
+			String urlIndex = "../Views/PagePrincipal.jsp";
 			response.sendRedirect(urlIndex);
 		} else{
 			String urlErro = "../Views/tenteNovamente.html";
