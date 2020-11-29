@@ -112,4 +112,28 @@ public class ProfessorDAO {
 			}
 		}
 	}
+	
+	public void delete(Professor professor) throws SQLException {
+		String sql = "DELETE FROM professor WHERE idProfessor = ?";
+		Connection conn = null;
+		PreparedStatement pstm = null;
+		
+		try {
+			conn = ConnectionFactory.createConnectionToMySQL();			
+			pstm = (PreparedStatement) conn.prepareStatement(sql);
+			
+			pstm.setInt(1, professor.getIdProfessor());
+			pstm.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(pstm!=null) {
+				pstm.close();
+			}
+			
+			if(conn!=null) {
+				conn.close();
+			}
+		}
+	}
 }
