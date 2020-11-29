@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>O evento foi cadastrado</title>
 </head>
 <body>
@@ -14,14 +14,15 @@
 		ReservaEventoDAO reservaEventoDAO = new ReservaEventoDAO();
 		
 		String nomeEvento = request.getParameter("nomeEvento");
-		String horarioEvento = request.getParameter("horarioEvento");
-		String dataEvento = request.getParameter("horarioEvento");
+		String horarioIniEvento = request.getParameter("horarioIniEvento");
+		String horarioFinEvento = request.getParameter("horarioFinEvento");
+		String dataEvento = request.getParameter("dataEvento");
 		String descricaoEvento = request.getParameter("descricaoEvento");
 		int idEspaco = Integer.parseInt(request.getParameter("idEspaco"));
 		int idProfessor = Integer.parseInt(request.getParameter("idProfessor"));
 		
 		reservaEvento.setNomeEvento(nomeEvento);
-		reservaEvento.setHorarioEvento(horarioEvento);
+		reservaEvento.setHorarioEvento(horarioIniEvento, horarioFinEvento);
 		reservaEvento.setDataEvento(dataEvento);
 		reservaEvento.setDescricaoEvento(descricaoEvento);
 		reservaEvento.setIdEspaco(idEspaco);
