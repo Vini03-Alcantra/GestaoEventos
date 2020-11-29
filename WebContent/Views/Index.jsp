@@ -75,31 +75,31 @@
                 <tr>                    
                         <td>
                             <label class="td-label" for="Nome">Nome Evento</label>                    
-                            <input class = "td-input" id="Nome" type="text" />
+                            <input class = "td-input" id="Nome" type="text" name="nomeEvento" />
                         </td>                     
                 </tr>
                 
                 <tr>           
                         <td>
                             <label class="td-label" for="data">Data</label>
-                            <input class = "td-input" id="data" type="date" />                    
+                            <input class = "td-input" id="data" type="date" name="dataEvento" />                    
                         </td>                             
                 </tr>
                 
                 <tr>                    
                     <td>
                         <label class="td-label" for="horInicial">Horário Inicial</label>                                        
-                        <input class = "td-input" id="horInicial" type="time" />
+                        <input class = "td-input" id="horInicial" type="time" name="horarioIniEvento"/>
                                         
                         <label class="td-label" for="horInicial">Horário Final</label>                    
-                        <input class = "td-input" id="horFinal" type="time" />                    
+                        <input class = "td-input" id="horFinal" type="time" name="horarioFinEvento"/>                    
                     </td>
                 </tr>
 
                 <tr>                        
                     <td>
                         <p><label class="td-label" for="descricao">Descrição</label></p>
-                        <p><textarea name="Descricao" id="descricao" cols="70" rows="5"></textarea></p>
+                        <p><textarea name="descricaoEvento" id="descricao" cols="70" rows="5"></textarea></p>
                     </td>
                 </tr>
 
