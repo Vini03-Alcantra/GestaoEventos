@@ -16,8 +16,17 @@
 		String tipoConta = request.getParameter("subject");
 		
 		if(loginParticipanteDAO.checkLogin(emailLogin, senhaLogin, tipoConta)){
-			String urlIndex = "../Views/Index.jsp";
-			response.sendRedirect(urlIndex);
+			if(tipoConta == "professor"){
+				String urlIndex = "../Views/Index.jsp";
+				response.sendRedirect(urlIndex);	
+			} else if(tipoConta == "usuario"){
+				String urlIndex = "../Views/IndexUser.jsp";
+				response.sendRedirect(urlIndex);
+			} else{
+				String urlIndex = "../Views/IndexAdmin.jsp";
+				response.sendRedirect(urlIndex);
+			}
+			
 		} else{
 			String urlErro = "../Views/tenteNovamente.html";
 			response.sendRedirect(urlErro);
