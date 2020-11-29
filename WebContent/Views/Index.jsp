@@ -1,3 +1,5 @@
+<%@page import="br.com.gestao.eventos.model.Professor"%>
+<%@page import="br.com.gestao.eventos.dao.ProfessorDAO"%>
 <%@page import="java.util.List"%>
 <%@page import="br.com.gestao.eventos.model.Espaco"%>
 <%@page import="br.com.gestao.eventos.dao.EspacoDAO"%>
@@ -14,8 +16,7 @@
 <body>
 <%
 	EspacoDAO espacoDAO = new EspacoDAO();
-	List<Espaco> espaco; 
-
+	ProfessorDAO professorDAO = new ProfessorDAO();
 %>
 	    <div class="content">
         <h1>Painel Principal</h1>
@@ -121,11 +122,9 @@
                         <label class="td-label" for="Professor">Professor</label>
                     
                         <select id="Professor" class="td-select">
-                            <option value="#"></option>
-                            <option value="#"></option>
-                            <option value="#"></option>
-                            <option value="#"></option>
-                            <option value="#"></option>
+                            <%for(Professor p: professorDAO.read()){%>
+                            	<option value="#<%=p.getNomeProfessor()%>"><%=p.getNomeProfessor()%></option>
+                            <%}%>
                         </select>                    
                     </td>
                 </tr>
