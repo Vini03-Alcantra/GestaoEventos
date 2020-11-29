@@ -1,3 +1,4 @@
+<%@page import="br.com.gestao.eventos.dao.SelectForeignKey"%>
 <%@page import="br.com.gestao.eventos.dao.ReservaEventoDAO"%>
 <%@page import="br.com.gestao.eventos.model.ReservaEvento"%>
 <%@ page language="java" contentType="text/html; UTF-8"
@@ -12,14 +13,17 @@
 	<%
 		ReservaEvento reservaEvento = new ReservaEvento();
 		ReservaEventoDAO reservaEventoDAO = new ReservaEventoDAO();
+		SelectForeignKey selectForeignKey = new SelectForeignKey();
 		
 		String nomeEvento = request.getParameter("nomeEvento");
 		String horarioIniEvento = request.getParameter("horarioIniEvento");
 		String horarioFinEvento = request.getParameter("horarioFinEvento");
 		String dataEvento = request.getParameter("dataEvento");
 		String descricaoEvento = request.getParameter("descricaoEvento");
-		int idEspaco = Integer.parseInt(request.getParameter("idEspaco"));
-		int idProfessor = Integer.parseInt(request.getParameter("idProfessor"));
+		String nomeEspaco = request.getParameter("espaco");
+		String nomeProfessor = request.getParameter("professor");
+		int idEspaco = selectForeignKey.ForeignKeyEspaco(nomeEspaco); 
+		int idProfessor = selectForeignKey.ForeingKeyProfessor(nomeProfessor);
 		
 		reservaEvento.setNomeEvento(nomeEvento);
 		reservaEvento.setHorarioEvento(horarioIniEvento+ "-" +horarioFinEvento);

@@ -107,7 +107,7 @@
                     <td>                        
                             <label class="td-label" for="Espaco">Espaço</label>
                         
-                            <select id="Espaco" class="td-select">                                                                
+                            <select id="Espaco" class="td-select" name="espaco">                                                                
                                 <%for(Espaco e: espacoDAO.readEspaco()){%>
                                 	<option value="#<%=e.getNome_espaco()%>"><%=e.getNome_espaco()%></option>
                                 <%}%>	
@@ -121,7 +121,7 @@
                     <td>
                         <label class="td-label" for="Professor">Professor</label>
                     
-                        <select id="Professor" class="td-select">
+                        <select id="Professor" class="td-select" name="professor">
                             <%for(Professor p: professorDAO.read()){%>
                             	<option value="#<%=p.getNomeProfessor()%>"><%=p.getNomeProfessor()%></option>
                             <%}%>
