@@ -16,14 +16,23 @@
 		SelectForeignKey selectForeignKey = new SelectForeignKey();
 		
 		String nomeEvento = request.getParameter("nomeEvento");
+		System.out.println(nomeEvento);
 		String horarioIniEvento = request.getParameter("horarioIniEvento");
+		System.out.println(horarioIniEvento);
 		String horarioFinEvento = request.getParameter("horarioFinEvento");
+		System.out.println(horarioFinEvento);
 		String dataEvento = request.getParameter("dataEvento");
+		System.out.println(dataEvento);
 		String descricaoEvento = request.getParameter("descricaoEvento");
+		System.out.println(descricaoEvento);
 		String nomeEspaco = request.getParameter("espaco");
+		System.out.println(nomeEspaco);
 		String nomeProfessor = request.getParameter("professor");
-		int idEspaco = selectForeignKey.ForeignKeyEspaco(nomeEspaco); 
+		System.out.println(nomeProfessor);
+		int idEspaco = selectForeignKey.ForeignKeyEspaco(nomeEspaco);
+		System.out.println(idEspaco);
 		int idProfessor = selectForeignKey.ForeingKeyProfessor(nomeProfessor);
+		System.out.println(idProfessor);
 		
 		reservaEvento.setNomeEvento(nomeEvento);
 		reservaEvento.setHorarioEvento(horarioIniEvento+ "-" +horarioFinEvento);

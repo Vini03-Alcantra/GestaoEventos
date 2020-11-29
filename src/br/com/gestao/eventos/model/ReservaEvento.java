@@ -6,8 +6,22 @@ public class ReservaEvento {
 	private String horarioEvento;
 	private String dataEvento;
 	private String descricaoEvento;
-	private int idEspaco;
-	private int idProfessor;
+	private String nomeEspaco;
+	private String nomeProfessor;
+	
+	public String getNomeEspaco() {
+		return nomeEspaco;
+	}
+	public void setNomeEspaco(String nomeEspaco) {
+		this.nomeEspaco = nomeEspaco;
+	}
+	public String getNomeProfessor() {
+		return nomeProfessor;
+	}
+	public void setNomeProfessor(String nomeProfessor) {
+		this.nomeProfessor = nomeProfessor;
+	}
+	
 	
 	public int getIdReservaEvento() {
 		return idReservaEvento;
@@ -15,18 +29,7 @@ public class ReservaEvento {
 	public void setIdReservaEvento(int idReservaEvento) {
 		this.idReservaEvento = idReservaEvento;
 	}
-	public int getIdEspaco() {
-		return idEspaco;
-	}
-	public void setIdEspaco(int idEspaco) {
-		this.idEspaco = idEspaco;
-	}
-	public int getIdProfessor() {
-		return idProfessor;
-	}
-	public void setIdProfessor(int idProfessor) {
-		this.idProfessor = idProfessor;
-	}
+	
 	
 	public String getNomeEvento() {
 		return nomeEvento;
