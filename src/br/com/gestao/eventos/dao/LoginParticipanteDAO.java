@@ -13,14 +13,17 @@ import br.com.gestao.eventos.factory.ConnectionFactory;
 
 public class LoginParticipanteDAO  {
 	
-	public boolean checkLogin(String login, String senha, String tipoConta) throws SQLException, ServletException{
+	public boolean checkLogin(String login, String senha, int tipoConta) throws SQLException, ServletException{
 		String sql = "";
-		if(tipoConta == "professor") {
+		System.out.println(tipoConta);
+		if(tipoConta == 2) {
 			sql = "SELECT * FROM professor WHERE emailProfessor = ? and senhaProfessor = ?";
-		} else if(tipoConta == "administrador") {
-			sql = "SELECT * FROM participante WHERE emailAdministrador = ? and senhaAdministrador = ?";
-		} else {
+		} else if(tipoConta == 1) {
+			sql = "SELECT * FROM administrador WHERE emailAdministrador = ? and senhaAdministrador = ?";
+		} else if(tipoConta == 3) {
 			sql = "SELECT * FROM participante WHERE emailParticipante = ? and senhaParticipante = ?";
+		} else {
+			System.out.println("Página não encontrada");
 		}
 		
 		

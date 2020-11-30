@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+h1{
+    text-align: center;
+}
+
+.eventos{
+    border: 1px solid black;
+    border-collapse: collapse;    
+    margin: 25%;
+    position: absolute;        
+    font-family: 'Roboto', sans-serif;
+    width: 35%;
+    height: 20%;
+    font-size: 14px;
+}
+
+
+.eventos th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 12px;
+    text-align: left;
+}
+
+.eventos td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: left;
+}
+
+tr:nth-child(even){
+    background-color: #eee;
+}
+
+.content{
+    margin: 5px 20px;
+}

@@ -12,21 +12,32 @@
 		LoginParticipanteDAO loginParticipanteDAO = new LoginParticipanteDAO();
 	
 		String emailLogin = request.getParameter("email_login");
+		System.out.println("Tipo de Conta " +emailLogin);
 		String senhaLogin = request.getParameter("senha_login");
-		String tipoConta = request.getParameter("subject");
+		System.out.println("Tipo de Conta " +senhaLogin);
+		int tipoConta = 0;
+		try{
+			tipoConta = Integer.parseInt(request.getParameter("tipoConta"));
+			System.out.println("Tipo de Conta " +tipoConta);
+		} catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		
 		
 		if(loginParticipanteDAO.checkLogin(emailLogin, senhaLogin, tipoConta)){
-			if(tipoConta == "professor"){
-				String urlIndex = "../Views/Index.jsp";
-				response.sendRedirect(urlIndex);	
-			} else if(tipoConta == "usuario"){
-				String urlIndex = "../Views/IndexUser.jsp";
-				response.sendRedirect(urlIndex);
+			if(tipoConta == 1){
+				String url = "../Views/IndexAdmin.jsp";
+				response.sendRedirect(url);
+			} else if(tipoConta == 2){
+				String url = "../Views/Index.jsp";
+				response.sendRedirect(url);
+			} else if(tipoConta == 3){
+				String url = "../Views/IndexUser.jsp";
+				response.sendRedirect(url);
 			} else{
-				String urlIndex = "../Views/IndexAdmin.jsp";
-				response.sendRedirect(urlIndex);
+				String url = "../Views/Sucesso.html";
 			}
-			
 		} else{
 			String urlErro = "../Views/tenteNovamente.html";
 			response.sendRedirect(urlErro);

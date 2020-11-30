@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
-<title> Gestão de eventos </title>
+<title> Gest�o de eventos </title>
 <link rel="stylesheet" type="text/css" href="../CSS/style.css" />
 </head>
 <body>
@@ -35,7 +35,7 @@
     <div class="content">      
       <!--LOGIN-->
       <div id="login">
-        <form method="post" action="../JSP/LoginParticipante_JSP.jsp"> 
+        <form action="../JSP/LoginParticipante_JSP.jsp" method="POST"> 
           <h1>Login</h1> 
           <p> 
             <label for="email_login">Seu e-mail</label>
@@ -46,20 +46,15 @@
             <label for="senha_login">Sua senha</label>
             <input id="senha_login" name="senha_login" required="required" type="password" placeholder="" /> 
           </p>
-
-
-          <p> 
-            
-<label for="senha_login">Tipo de conta</label> <select name="subject" id="subject">
-    <option value="administrador" selected="selected">Administrador</option>
-    <option value="participante" selected="selected">Participante</option>
-    <option value="professor" selected="selected">Professor</option>
-  </select>
-  <br><br> 
-          </p>
           
-
-
+            <label for="conta">Tipo de Conta</label>
+                        
+            <select id="conta" name="tipoConta">  
+              <option value="1">Administrador</option>
+              <option value="2">Professor</option>
+              <option value="3">Usu�rio</option>
+            </select>    
+        
           <p> 
             <input type="checkbox" name="manterlogado" id="manterlogado" value="" /> 
             <label for="manterlogado">Manter-me logado</label>
@@ -79,18 +74,7 @@
       </div>
 
 
-<!-- FormulÃ¡rio de Login -->
-  <form action="validacao.php" method="post">
-  <fieldset>
-  <legend>Dados de Login</legend>
-      <label for="txUsuario">UsuÃ¡rio</label>
-      <input type="text" name="usuario" id="txUsuario" maxlength="25" />
-      <label for="txSenha">Senha</label>
-      <input type="password" name="senha" id="txSenha" />
 
-      <input type="submit" value="Entrar" />
-  </fieldset>
-  </form>
 
     <!--FORMULÃRIO DE CADASTRO-->
       <div id="cadastro">

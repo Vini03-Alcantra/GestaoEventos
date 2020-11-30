@@ -50,7 +50,7 @@
     <form action="../JSP/ReservaEvento_JSP.jsp" method="POST">
         <fieldset>
             <legend>Cadastrar Evento</legend>
-            <table cellspacing="10">
+            <table>
                 <tr>                    
                         <td>
                             <label class="td-label" for="Nome">Nome Evento</label>                    
