@@ -1,7 +1,7 @@
-<!-- <%@page import="br.com.gestao.eventos.dao.ReservaEventoDAO"%>
+<%@page import="br.com.gestao.eventos.dao.ReservaEventoDAO"%>
 <%@page import="br.com.gestao.eventos.model.ReservaEvento"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%> -->
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +10,9 @@
 <link rel="stylesheet" href="../CSS/StyleIndexUser.css">
 </head>
 <body>
-<!-- <%
+<%
 	ReservaEventoDAO reservaEventoDAO = new ReservaEventoDAO();
-%> -->
+%> 
 <div class="content">
 	<h1>Eventos Previstos</h1>
 	<table class="eventos">

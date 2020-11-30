@@ -2,8 +2,7 @@
 
 *{
     margin: 0;
-    padding: 0;
-    
+    padding: 0;    
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
@@ -103,4 +102,13 @@ textarea{
     font-family: 'Roboto', sans-serif;
     background-color: #7BD7EA;
     color: blanchedalmond;
+}
+
+.remover{
+    background-color: crimson;
+    color: whitesmoke;
+    font-size: 14px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
