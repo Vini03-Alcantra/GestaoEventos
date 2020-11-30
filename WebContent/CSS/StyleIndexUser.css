@@ -7,7 +7,7 @@ h1{
 .eventos{
     border: 1px solid black;
     border-collapse: collapse;    
-    margin: 25%;
+    left: 18%;
     position: absolute;        
     font-family: 'Roboto', sans-serif;
     width: 35%;
