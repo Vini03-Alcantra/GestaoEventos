@@ -10,13 +10,12 @@ h1{
     left: 18%;
     position: absolute;        
     font-family: 'Roboto', sans-serif;
-    width: 35%;
-    height: 20%;
     font-size: 14px;
 }
 
 
 .eventos th{
+	font-size: 18px;
     border: 1px solid black;
     border-collapse: collapse;
     padding: 12px;
@@ -24,9 +23,10 @@ h1{
 }
 
 .eventos td{
+	font-size: 18px;
     border: 1px solid black;
     border-collapse: collapse;
-    padding: 5px;
+    padding: 12px;
     text-align: left;
 }
 

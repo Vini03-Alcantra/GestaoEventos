@@ -24,14 +24,12 @@ h1{
     margin-left: auto;
     margin-right: auto;
     display: block;
-    font-family: 'Roboto', sans-serif;
-    width: 40%;
-    height: 40%;
-    font-size: 14px;
+    font-family: 'Roboto', sans-serif;        
     left: 38%;
 }
 
 .eventos th{
+	font-size: 18px;
     border: 1px solid black;
     border-collapse: collapse;
     padding: 12px;
@@ -39,9 +37,10 @@ h1{
 }
 
 .eventos td{
+	font-size: 18px;
     border: 1px solid black;
     border-collapse: collapse;
-    padding: 5px;
+    padding: 12px;
     text-align: left;
 }
 

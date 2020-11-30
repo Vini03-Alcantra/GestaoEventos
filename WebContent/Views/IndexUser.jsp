@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Painel Principal Usuário</title>
-<link rel="stylesheet" href="../CSS/StyleIndexUser.css">
+<link rel="stylesheet" href="../CSS/StyleIndexAdmin.css">
 </head>
 <body>
 <%
